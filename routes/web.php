@@ -11,6 +11,5 @@ Route::get('/', function () {
         'projects' => config('portfolio.projects'),
         'certificates' => config('portfolio.certificates'),
         'social' => config('portfolio.social'),
-        'hero_images' => config('portfolio.profile.hero_images'),
     ]);
 });

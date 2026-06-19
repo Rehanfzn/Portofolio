@@ -3,9 +3,11 @@
 return [
     'brand' => 'RehanFaezan',
     'items' => [
-        ['id' => 'work', 'label' => 'Work'],
-        ['id' => 'projects', 'label' => 'Projects'],
-        ['id' => 'skills', 'label' => 'Skills'],
-        ['id' => 'contact', 'label' => 'Contact'],
+        ['id' => 'about',       'label' => 'About'],
+        ['id' => 'experience',  'label' => 'Experience'],
+        ['id' => 'skills',      'label' => 'Skills'],
+        ['id' => 'projects',    'label' => 'Projects'],
+        ['id' => 'certificates','label' => 'Certificates'],
+        ['id' => 'contact',     'label' => 'Contact'],
     ],
 ];

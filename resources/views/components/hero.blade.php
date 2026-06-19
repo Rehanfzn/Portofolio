@@ -1,32 +1,7 @@
-@props(['profile', 'hero_images'])
+@props(['profile'])
 
 <section id="home"
-    class="relative min-h-screen flex items-center justify-center pt-20 scroll-mt-24 overflow-hidden"
-    x-data="heroCarousel({{ count($hero_images) }})"
-    x-init="init()"
-    @mouseenter="pause()"
-    @mouseleave="resume()">
-
-    <div class="absolute inset-0">
-        @foreach ($hero_images as $image)
-        <div x-show="current === {{ $loop->index }}"
-            x-cloak
-            x-transition:enter="transition-opacity duration-700"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="transition-opacity duration-700"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-            class="absolute inset-0">
-            <img src="{{ str_starts_with($image, 'http') ? $image : asset($image) }}"
-                alt="Hero background"
-                class="w-full h-full object-cover"
-                @load="loaded[{{ $loop->index }}] = true">
-        </div>
-        @endforeach
-    </div>
-
-    <div class="absolute inset-0 bg-gradient-to-b from-zinc-900/60 via-zinc-900/40 to-zinc-900/70 dark:from-black/70 dark:via-black/50 dark:to-black/80"></div>
+    class="relative min-h-screen flex items-center justify-center pt-20 scroll-mt-24 overflow-hidden bg-black">
 
     <div class="aurora">
         <div class="aurora-blob"></div>
@@ -34,7 +9,6 @@
         <div class="aurora-blob"></div>
         <div class="aurora-blob"></div>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/[0.02] via-transparent to-transparent dark:from-indigo-500/[0.04] pointer-events-none"></div>
 
     <div class="container mx-auto px-6 relative z-10 text-center">
         <div class="max-w-2xl mx-auto space-y-6">
@@ -65,7 +39,7 @@
             </div>
 
             <div class="reveal opacity-0 flex flex-wrap justify-center gap-3 pt-2" style="animation-delay: 0.4s">
-                <a href="#work"
+                <a href="#experience"
                     class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 px-5 rounded-lg transition-all text-sm shadow-lg">
                     View Experience
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,14 +52,5 @@
                 </a>
             </div>
         </div>
-    </div>
-
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-        @foreach ($hero_images as $image)
-        <button @click="goTo({{ $loop->index }})"
-            class="h-1.5 rounded-full transition-all duration-300"
-            :class="current === {{ $loop->index }} ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60 w-1.5'">
-        </button>
-        @endforeach
     </div>
 </section>

@@ -14,47 +14,6 @@ Alpine.data('theme', () => ({
     }
 }))
 
-Alpine.data('heroCarousel', (total) => ({
-    current: 0,
-    total,
-    interval: null,
-    isPaused: false,
-    loaded: [],
-    init() {
-        this.loaded = Array(total).fill(false)
-        this.start()
-    },
-    start() {
-        this.interval = setInterval(() => {
-            if (!this.isPaused) this.next()
-        }, 5000)
-    },
-    stop() {
-        if (this.interval) {
-            clearInterval(this.interval)
-            this.interval = null
-        }
-    },
-    next() {
-        this.current = (this.current + 1) % this.total
-    },
-    prev() {
-        this.current = (this.current - 1 + this.total) % this.total
-    },
-    goTo(index) {
-        this.current = index
-    },
-    pause() {
-        this.isPaused = true
-    },
-    resume() {
-        this.isPaused = false
-    },
-    destroy() {
-        this.stop()
-    }
-}))
-
 Alpine.data('photoSphere', () => ({
     loaded: false,
     colored: false,
@@ -173,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', e => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
-        const map = { '1': 'work', '2': 'projects', '3': 'skills', '4': 'contact', 't': 'theme' }
+        const map = { '1': 'about', '2': 'experience', '3': 'skills', '4': 'projects', '5': 'certificates', '6': 'contact', 't': 'theme' }
         const id = map[e.key]
         if (!id) return
         if (id === 'theme') {

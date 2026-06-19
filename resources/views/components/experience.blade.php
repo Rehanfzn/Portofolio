@@ -1,6 +1,6 @@
 @props(['experience'])
 
-<section id="work" class="py-24 sm:py-32 scroll-mt-24">
+<section id="experience" class="py-24 sm:py-32 scroll-mt-24">
     <div class="max-w-3xl mx-auto px-6">
         <div class="mb-16 reveal opacity-0">
             <span class="section-label">Experience</span>

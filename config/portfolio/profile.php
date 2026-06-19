@@ -23,7 +23,7 @@ return [
             'period' => '2021 — 2024',
         ],
     ],
-    'cv_url' => 'pdfs/sertifikat%201.pdf',
+    'cv_url' => 'pdfs/Rehan_Faezan_CV.pdf',
 
     'hero_images' => [
         'pdfs/Rehanfzn.jpeg',
